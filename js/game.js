@@ -10,7 +10,19 @@
         var dieNumOne = document.querySelector('.dice aside:first-child').innerText;
         console.log(dieNumOne);
 
+        var dieNumTwo = document.querySelector('.dice aside:last-child').innerText;
+        console.log(dieNumTwo);
+
     });
 
+    var diceGame = {
+      dice: 2,
+      startDate: new Date(),
+      rounds: [],
+      diceRoll: function diceRoll() {
+        return Math.ceil(Math.random() * 6);
+
+      }
+    };
 
 })();
