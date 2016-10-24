@@ -8,14 +8,26 @@ console.log('start');
 
     document.querySelector('button').addEventListener('click', function buttonClicked() {
 
-        var dieNumOne = document.querySelector('.dice aside:first-child').innerText;
-        console.log(dieNumOne);
+        // var dieNumOne = document.querySelector('.dice aside:first-child').innerText;
+        // console.log(dieNumOne);
+        //
+        // var dieNumTwo = document.querySelector('.dice aside:last-child').innerText;
+        // console.log(dieNumTwo);
 
-        var dieNumTwo = document.querySelector('.dice aside:last-child').innerText;
-        console.log(dieNumTwo);
+        // var x = 4;
+        //                |--------4--------|   1-6
+        var diceRollOne = diceGame.diceRoll();
+        var diceRollTwo = diceGame.diceRoll();
 
-        document.querySelector('.dice aside:first-child').innerText = diceGame.diceRoll();
-        document.querySelector('.dice aside:last-child').innerText = diceGame.diceRoll();
+        document.querySelector('.dice aside:first-child').innerText = diceRollOne;
+        document.querySelector('.dice aside:last-child').innerText = diceRollTwo;
+
+        if ((diceRollOne + diceRollTwo) === 7 || (diceRollOne + diceRollTwo) === 11) {
+          document.querySelector('.result').innerText = 'Winner';
+        }
+        else {
+          document.querySelector('.result').innerText = 'Try Again';
+        }
 
     });
 
@@ -23,9 +35,11 @@ console.log('start');
       startDate: new Date(),
       rounds: [],
       diceRoll: function diceRoll() {
+        //     |-------------4------------|
         return Math.ceil(Math.random() * 6);
       }
     }
+
 
 
     console.log( diceGame.diceRoll() );
