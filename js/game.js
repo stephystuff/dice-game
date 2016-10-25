@@ -14,8 +14,6 @@ console.log('start');
         // var dieNumTwo = document.querySelector('.dice aside:last-child').innerText;
         // console.log(dieNumTwo);
 
-        // var x = 4;
-        //                |--------4--------|   1-6
         var diceRollOne = diceGame.diceRoll();
         var diceRollTwo = diceGame.diceRoll();
 
@@ -24,10 +22,15 @@ console.log('start');
 
         if ((diceRollOne + diceRollTwo) === 7 || (diceRollOne + diceRollTwo) === 11) {
           document.querySelector('.result').innerText = 'Winner';
+          var finish = new Date();
+          document.querySelector('.message').innerText = '(It took you ' + ( diceGame.rounds.length + 1 ) + ' times and ' + ( (finish.getTime() - diceGame.startDate.getTime() ) / 1000) + ' seconds)';
         }
         else {
           document.querySelector('.result').innerText = 'Try Again';
         }
+
+        diceGame.rounds.push (diceRollOne + diceRollTwo);
+          console.log(diceGame.rounds);
 
     });
 
@@ -35,12 +38,11 @@ console.log('start');
       startDate: new Date(),
       rounds: [],
       diceRoll: function diceRoll() {
-        //     |-------------4------------|
         return Math.ceil(Math.random() * 6);
       }
     }
 
 
 
-    console.log( diceGame.diceRoll() );
+document.querySelector('.game-start').innerText = 'Game started' + diceGame.startDate;
 })();
