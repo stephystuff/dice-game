@@ -1,6 +1,35 @@
 main {
   border: 1px solid #000000;
   width: 400px;
-  border-radius: 5px; }
+  height: 300px;
+  border-radius: 5px;
+  text-align: center;
+  color: #444444; }
+
+.die1 {
+  border: 1px solid #000000;
+  background-color: #cccccc;
+  width: 50px;
+  height: 50px;
+  margin: 0 60px 20px 60px;
+  font-weight: bold;
+  color: #444444;
+  float: left; }
+
+.die2 {
+  border: 1px solid #000000;
+  background-color: #cccccc;
+  width: 50px;
+  height: 50px;
+  margin: 0 60px 20px 60px;
+  font-weight: bold;
+  color: #444444;
+  float: left; }
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 1.3em; }
 
 /*# sourceMappingURL=styles.css.map */
